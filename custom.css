@@ -1,0 +1,10 @@
+.parallelogram {
+  width: 30px; /* Adjust width as needed */
+  height: 41px; /* Adjust height as needed */
+  border: 2px solid #333;
+
+  transform: skewX(-40deg);
+}
+.content {
+  transform: skewX(40deg);
+}

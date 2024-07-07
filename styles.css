@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Nantes";
+  src: url("./src/fonts/Nantes-Bold.woff") format("woff");
+
+  /* Add more formats as necessary */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Optional: Apply the custom font to specific elements */
+
+@font-face {
+  font-family: "Messina";
+  src: url("./src/fonts/MessinaSans-SemiBold.woff") format("woff");
+
+  /* Add more formats as necessary */
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-nantes {
+  font-family: "Nantes";
+}
+
+.font-messina {
+  font-family: "Messina";
+}
+
+.slide-menu {
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+}
+.slide-menu.show {
+  transform: translateX(0);
+}
