@@ -8,3 +8,18 @@
 .content {
   transform: skewX(40deg);
 }
+
+.custom-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+    /* Standard shadow */ 0 15px 20px rgba(0, 0, 0, 0.31); /* Additional shadow for depth */
+}
+
+.bg-image-vector {
+  background-image: url(src/svg/Group\ 364.svg);
+
+  position: absolute;
+  width: 616px;
+  height: 595.35px;
+  left: 680px;
+  top: 2999px;
+}
