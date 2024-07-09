@@ -34,8 +34,8 @@ This project was created as part of an assignment for a company to showcase my s
    ```sh
     https://github.com/stanvir940/software-company-frontend.git
 2. Navigate to the project directory:
-  ``sh
-  cd /
+   ```sh
+   cd /
 
 ## Usage
 You can use it everywhere. No Copyright issues
