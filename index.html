@@ -11,9 +11,9 @@
     />
     <title>Wp-pool</title>
   </head>
-  <body class="bg-gray-300">
+  <body class="bg-slate-300">
     <!-- first section of the Home Page -->
-    <div class="w-full bg-[#2042B6] h-screen p-8">
+    <div class="w-screen bg-[#2042B6] h-full md:h-screen p-8" id="first-div">
       <nav class="bg-[#2042B6] flex justify-between">
         <!-- nav logo -->
         <div class="w-8">
@@ -83,14 +83,14 @@
           </svg>
         </div>
         <!-- nav options -->
-        <div class="flex">
+        <div class="flex justify-center items-center">
           <div
-            class="w-12 h-12 rounded-full cursor-pointer flex items-center justify-center overflow-hidden border mr-4"
+            class="hidden w-12 h-12 rounded-full cursor-pointer md:flex items-center justify-center overflow-hidden border mr-4"
           >
             <i class="bx bxs-share-alt text-white"></i>
           </div>
           <div
-            class="w-fit h-12 rounded-full cursor-pointer flex items-center justify-center overflow-hidden border mr-4 text-white p-4"
+            class="hidden w-fit h-12 rounded-full cursor-pointer md:flex items-center justify-center overflow-hidden border mr-4 text-white p-4"
           >
             Download the 2024 report
           </div>
@@ -106,7 +106,7 @@
       <!-- toggle slider options -->
       <div
         id="slide-menu"
-        class="fixed top-0 right-0 w-1/4 h-screen bg-white shadow-lg slide-menu"
+        class="fixed top-0 right-0 md:w-1/4 w-2/3 h-screen bg-white shadow-lg slide-menu z-50"
       >
         <div class="p-4">
           <div class="flex pb-10 justify-between">
@@ -244,13 +244,13 @@
           </div>
           <!-- title part -->
           <div
-            class="text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center"
+            class="text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:text-center"
           >
             <div class="text-center font-nantes p-3">
-              <h1 class="text-7xl">The WPPOOL Index</h1>
+              <h1 class="md:text-7xl text-2xl">The WPPOOL Index</h1>
             </div>
-            <div class="text-center text-2xl font-messina w-full">
-              <p class="whitespace-nowrap">
+            <div class="text-center md:text-2xl text-base font-messina w-full">
+              <p class="md:whitespace-nowrap">
                 Monitor the performance of emerging, publicly traded, financial
                 technology companies
               </p>
@@ -273,9 +273,10 @@
     </div>
 
     <!-- second section -->
-    <div class="w-full h-full bg-white text-center mt-8 p-4">
+    <div class="w-full h-full bg-white text-center mt-8 p-4" id="second-div">
       <nav
-        class="bg-[#F3F3F3] flex justify-between p-4 rounded-lg text-black m-4"
+        id="second-navbar"
+        class="bg-[#F3F3F3] justify-between p-4 rounded-lg text-black m-4 sticky-navbar hidden z-50"
       >
         <!-- nav logo -->
         <div class="w-8">
@@ -358,12 +359,46 @@
           </div>
           <div
             class="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden mr-4 cursor-pointer"
-            id="menu-icon"
+            id="menu-icon1"
           >
             <i class="bx bx-menu text-3xl"></i>
           </div>
         </div>
       </nav>
+
+      <!-- toggle slider options test -->
+      <div
+        id="slide-menu1"
+        class="fixed top-0 right-0 md:w-1/4 w-2/3 h-screen bg-white shadow-lg slide-menu z-50"
+      >
+        <div class="p-4">
+          <div class="flex pb-10 justify-between">
+            <div
+              class="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden border mr-2 bg-lime-500 cursor-pointer"
+            >
+              <i class="bx bxs-share-alt text-white"></i>
+            </div>
+            <div
+              class="w-fit h-12 rounded-full flex items-center justify-center overflow-hidden border mr-2 bg-blue-700 text-white p-4 cursor-pointer"
+            >
+              Download report
+            </div>
+            <div
+              class="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden mr-2 cursor-pointer"
+              id="close-menu1"
+            >
+              <i class="bx bx-x text-3xl"></i>
+            </div>
+          </div>
+          <ul>
+            <li class="mb-2"><a href="#" class="text-blue-500">Option 1</a></li>
+            <li class="mb-2"><a href="#" class="text-blue-500">Option 2</a></li>
+            <li class="mb-2"><a href="#" class="text-blue-500">Option 3</a></li>
+            <li class="mb-2"><a href="#" class="text-blue-500">Option 4</a></li>
+          </ul>
+        </div>
+      </div>
+
       <!-- second section details starting -->
       <div class="md:flex p-4">
         <div
@@ -864,10 +899,12 @@
     <div class="mt-36 p-20">
       <!-- heading -->
       <div>
-        <div class="font-nantes text-5xl text-black text-left">
+        <div class="font-nantes md:text-5xl text-2xl text-black text-left">
           <h1>Potential Future Listings</h1>
         </div>
-        <div class="font-nantes text-lg text-black text-left pt-3 w-2/3">
+        <div
+          class="font-nantes text-lg text-gray-500 text-left pt-3 md:w-2/3 w-full"
+        >
           <p>
             Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
             vulputate libero et velit interdum, ac aliquet odio mattis. Class
@@ -880,10 +917,11 @@
       <!-- details company -->
       <div class="pt-6 grid grid-cols-2 gap-2 md:grid-cols-5 md:gap-5">
         <div
-          class="bg-white rounded-md w-56 h-[120px] p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
+          class="bg-white rounded-md md:w-56 md:h-[120px] w-32 h-11 p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
         >
           <svg
             width="133"
+            class="w-8 md:w-full"
             height="56"
             viewBox="0 0 133 56"
             fill="none"
@@ -932,10 +970,11 @@
           </svg>
         </div>
         <div
-          class="bg-white rounded-md w-56 h-[120px] p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
+          class="bg-white rounded-md md:w-56 md:h-[120px] w-32 h-11 p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
         >
           <svg
             width="134"
+            class="w-8 md:w-full"
             height="30"
             viewBox="0 0 134 30"
             fill="none"
@@ -978,10 +1017,11 @@
           </svg>
         </div>
         <div
-          class="bg-white rounded-md w-56 h-[120px] p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
+          class="bg-white rounded-md md:w-56 md:h-[120px] w-32 h-11 p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
         >
           <svg
             width="140"
+            class="w-8 md:w-full"
             height="53"
             viewBox="0 0 140 53"
             fill="none"
@@ -1002,10 +1042,11 @@
           </svg>
         </div>
         <div
-          class="bg-white rounded-md w-56 h-[120px] p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
+          class="bg-white rounded-md md:w-56 md:h-[120px] w-32 h-11 p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
         >
           <svg
             width="185"
+            class="w-8 md:w-full"
             height="24"
             viewBox="0 0 185 24"
             fill="none"
@@ -1066,10 +1107,11 @@
           </svg>
         </div>
         <div
-          class="bg-white rounded-md w-56 h-[120px] p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
+          class="bg-white rounded-md md:w-56 md:h-[120px] w-32 h-11 p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
         >
           <svg
             width="144"
+            class="w-8 md:w-full"
             height="33"
             viewBox="0 0 144 33"
             fill="none"
@@ -1106,10 +1148,11 @@
           </svg>
         </div>
         <div
-          class="bg-white rounded-md w-56 h-[120px] p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
+          class="bg-white rounded-md md:w-56 md:h-[120px] w-32 h-11 p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
         >
           <svg
             width="155"
+            class="w-8 md:w-full"
             height="45"
             viewBox="0 0 155 45"
             fill="none"
@@ -1122,11 +1165,12 @@
           </svg>
         </div>
         <div
-          class="bg-white rounded-md w-56 h-[120px] p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
+          class="bg-white rounded-md md:w-56 md:h-[120px] w-32 h-11 p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
         >
           <svg
             width="94"
             height="65"
+            class="w-8 md:w-full"
             viewBox="0 0 94 65"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -1148,11 +1192,12 @@
           </svg>
         </div>
         <div
-          class="bg-white rounded-md w-56 h-[120px] p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
+          class="bg-white rounded-md md:w-56 md:h-[120px] w-32 h-11 p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
         >
           <svg
             width="146"
             height="38"
+            class="w-8 md:w-full"
             viewBox="0 0 146 38"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -1168,10 +1213,11 @@
           </svg>
         </div>
         <div
-          class="bg-white rounded-md w-56 h-[120px] p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
+          class="bg-white rounded-md md:w-56 md:h-[120px] w-32 h-11 p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
         >
           <svg
             width="126"
+            class="w-8 md:w-full"
             height="44"
             viewBox="0 0 126 44"
             fill="none"
@@ -1200,11 +1246,12 @@
           </svg>
         </div>
         <div
-          class="bg-white rounded-md w-56 h-[120px] p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
+          class="bg-white rounded-md md:w-56 md:h-[120px] w-32 h-11 p-4 flex justify-center items-center hover:scale-105 hover:bg-slate-200"
         >
           <svg
             width="132"
             height="50"
+            class="w-8 md:w-full"
             viewBox="0 0 132 50"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -1219,12 +1266,427 @@
     </div>
 
     <!-- fifth section -->
-    <div class="mt-36 pl-20 w-full h-screen relative">
-      <div class="absolute w-full h-screen -z-0"></div>
+    <div class="mt-36 md:pr-20 md:pl-20 pr-3 pl-3 w-screen h-screen relative">
+      <div
+        class="absolute md:-inset-x-24 -inset-x-4 w-full -z-0 flex items-center justify-end"
+      >
+        <img src="/src/svg/Group 364.svg" alt="" class="" />
+      </div>
+      <div class="absolute md:inset-x-[5.5rem] inset-x-4 z-10">
+        <div class="text-black font-nantes text-5xl mb-2">
+          <h1>State of USA</h1>
+        </div>
+        <div
+          class="md:w-44 h-[40px] bg-[#2042B6] flex justify-between items-center rounded-[124px] p-1 text-white pl-4 pr-4 mr-4"
+        >
+          <div class="text-3xl">2024</div>
+          <div><i class="bx bxs-down-arrow text-white"></i></div>
+        </div>
+        <div class="font-thin pt-4 text-black">
+          <p>
+            Click through the slides or download the report to view natively on
+            your device.
+          </p>
+        </div>
+
+        <!-- carousel item -->
+        <div class="w-full max-w-full bg-transparent pt-6">
+          <div id="carousel" class="carousel bg-transparent">
+            <div class="carousel-item text-white md:p-1">
+              <img src="/src/svg/rgegdg.png" alt="" />
+            </div>
+            <div class="carousel-item text-white md:p-1">
+              <img src="/src/svg/rhrdgd.png" alt="" />
+            </div>
+            <div class="carousel-item text-white md:p-1">
+              <img src="/src/svg/rgegdg.png" alt="" />
+            </div>
+            <div class="carousel-item text-white md:p-1">
+              <img src="/src/svg/rhrdgd.png" alt="" />
+            </div>
+          </div>
+          <div class="md:flex justify-between items-center mt-0">
+            <div class="flex justify-center items-center mb-10">
+              <div>
+                <button
+                  id="prev"
+                  class="bg-white rounded-full text-black px-4 py-2 m-2 custom-shadow overflow-hidden w-11 h-11"
+                >
+                  ‹
+                </button>
+                <button
+                  id="next"
+                  class="bg-white rounded-full text-black px-4 py-2 m-2 overflow-hidden custom-shadow w-11 h-11"
+                >
+                  ›
+                </button>
+              </div>
+
+              <div class="flex text-black justify-center items-center pl-4">
+                <div class="md:mr-6 mr-2">
+                  <p>Pages</p>
+                </div>
+                <div
+                  class="h-11 w-20 rounded-full bg-white flex justify-center items-center md:mr-6 mr-2 overflow-hidden custom-shadow"
+                >
+                  <p>1 and 2</p>
+                </div>
+                <div class="flex justify-center items-center"><p>of 27</p></div>
+              </div>
+            </div>
+            <div
+              class="w-full md:w-64 text-white bg-[#2042B6] rounded-full md:ml-4 h-11 flex justify-center items-center p-1"
+            >
+              <p>Download the 2023 Report</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- sixth section -->
+    <div class="mt-36 md:pr-20 md:pl-20 p-6 w-screen md:h-screen h-full">
+      <div class="font-nantes text-5xl text-black">
+        <h1>Stories & Ideas</h1>
+        <p class="text-lg font-sans text-gray-800">
+          The latest news and updates
+        </p>
+      </div>
+      <div class="md:grid md:grid-cols-3 md:gap-5 pt-6">
+        <div
+          class="w-[380px] md:h-[220px] bg-white rounded-md relative mt-14 hover:scale-105 hover:bg-blue-100"
+        >
+          <div class="absolute -inset-y-12 h-32">
+            <img src="/src/svg/image 97.png" alt="" />
+          </div>
+          <!-- details -->
+          <div class="text-[#2042B6] text-base p-3 pt-24 font-sans">
+            <h1>By: Sahabuddin Sagor</h1>
+            <p class="font-nantes text-[#191618]">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+              mollitia.
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-[380px] md:h-[220px] bg-white rounded-md relative mt-14 hover:scale-105 hover:bg-blue-100"
+        >
+          <div class="absolute -inset-y-12 h-32">
+            <img src="/src/svg/image 98.png" alt="" />
+          </div>
+          <!-- details -->
+          <div class="text-[#2042B6] text-base p-3 pt-24 font-sans">
+            <h1>By: Sahabuddin Sagor</h1>
+            <p class="font-nantes text-[#191618]">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+              mollitia.
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-[380px] md:h-[220px] bg-white rounded-md relative mt-14 hover:scale-105 hover:bg-blue-100"
+        >
+          <div class="absolute -inset-y-12 h-32">
+            <img src="/src/svg/image 97.png" alt="" />
+            <div
+              class="absolute top-0 left-3 bg-white text-black text-xs font-thin rounded-r-md px-2 py-1"
+            >
+              CARROT
+            </div>
+          </div>
+          <!-- details -->
+          <div class="text-[#2042B6] text-base p-3 pt-24 font-sans">
+            <h1>By: Sahabuddin Sagor</h1>
+            <p class="font-nantes text-[#191618]">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+              mollitia.
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-[380px] md:h-[220px] bg-white rounded-md relative mt-14 hover:scale-105 hover:bg-blue-100"
+        >
+          <div class="absolute -inset-y-12 h-32">
+            <img src="/src/svg/image 97.png" alt="" />
+          </div>
+          <!-- details -->
+          <div class="text-[#2042B6] text-base p-3 pt-24 font-sans">
+            <h1>By: Sahabuddin Sagor</h1>
+            <p class="font-nantes text-[#191618]">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+              mollitia.
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-[380px] md:h-[220px] bg-white rounded-md relative mt-14 hover:scale-105 hover:bg-blue-100"
+        >
+          <div class="absolute -inset-y-12 h-32">
+            <img src="/src/svg/image 98.png" alt="" />
+          </div>
+          <!-- details -->
+          <div class="text-[#2042B6] text-base p-3 pt-24 font-sans">
+            <h1>By: Sahabuddin Sagor</h1>
+            <p class="font-nantes text-[#191618]">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+              mollitia.
+            </p>
+          </div>
+        </div>
+        <div
+          class="md:w-[380px] md:h-[220px] bg-white rounded-md relative mt-14 hover:scale-105 hover:bg-blue-100"
+        >
+          <div class="absolute -inset-y-12 h-32">
+            <img src="/src/svg/image 97.png" alt="" />
+            <div
+              class="absolute top-0 left-3 bg-white text-black text-xs font-thin rounded-r-md px-2 py-1"
+            >
+              CARROT
+            </div>
+          </div>
+          <!-- details -->
+          <div class="text-[#2042B6] text-base p-3 pt-24 font-sans">
+            <h1>By: Sahabuddin Sagor</h1>
+            <p class="font-nantes text-[#191618]">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+              mollitia.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- a thin line -->
+      <div class="w-full h-[1px] bg-[#90B8F0] mt-12"></div>
+    </div>
+
+    <!-- seventh section -->
+    <div class="mt-36 md:pr-20 md:pl-20 p-6 w-screen md:w-screen h-full">
+      <div
+        class="bg-white md:grid grid-cols-2 gap-0 justify-center items-center rounded-xl md:pr-0 md:pl-20 pt-6 p-4 pb-0"
+      >
+        <div class="md:pt-20 md:pb-20">
+          <div class="font-nantes text-black">
+            <h1 class="text-5xl">About WPPOOL</h1>
+            <h3 class="text-gray-600 text-2xl mt-2">
+              Investing in wppool for over 50 years
+            </h3>
+            <p class="font-thin text-gray-600 mt-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+              mollitia,molestiae quas vel sint commodi repudiandae consequuntur
+              voluptatum laborumnumquam blanditiis harum quisquam eius sed odit
+              fugiat iusto fuga praesentiumoptio, eaque rerum! Provident
+              similique accusantium nemo autem.
+            </p>
+          </div>
+          <div
+            class="bg-[#2042B6] rounded-full w-fit text-white hover:scale-105 hover:bg-blue-900 mt-6 h-11 custom-shadow overflow-hidden flex justify-center items-center p-4"
+          >
+            <p>Contact WPPOOL</p>
+          </div>
+        </div>
+        <div class="pb-0 pt-0 pr-0">
+          <img src="/src/svg/Mask group.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Eighth section -->
+    <div class="mt-28 md:pr-20 md:pl-20 p-6 w-screen md:h-screen h-full">
+      <div class="font-nantes text-black text-5xl pb-4">
+        <h1>Selected WPPOOL Portfolio Companies</h1>
+      </div>
+      <div
+        class="grid md:grid-cols-5 grid-cols-2 gap-4 justify-center items-center"
+      >
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img
+            src="/src/svg/WPPOOL Index/ae99cd49-2667-464e-b9db-b39cee0126e1 1.png"
+            alt=""
+          />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img
+            src="/src/svg/WPPOOL Index/62e84990058cefbfc33ef312_vendr_logo 1.png"
+            alt=""
+          />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img src="/src/svg/WPPOOL Index/9.png" alt="" />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img src="/src/svg/WPPOOL Index/8.png" alt="" />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img src="/src/svg/WPPOOL Index/7.png" alt="" />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img src="/src/svg/WPPOOL Index/6.png" alt="" />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img src="/src/svg/WPPOOL Index/5.png" alt="" />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img src="/src/svg/WPPOOL Index/4.png" alt="" />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img src="/src/svg/WPPOOL Index/3.png" alt="" />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img src="/src/svg/WPPOOL Index/2.png" alt="" />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img src="/src/svg/WPPOOL Index/1.png" alt="" />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img src="/src/svg/WPPOOL Index/18.png" alt="" />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img src="/src/svg/WPPOOL Index/17.png" alt="" />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img src="/src/svg/WPPOOL Index/16.png" alt="" />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img src="/src/svg/WPPOOL Index/15.png" alt="" />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img src="/src/svg/WPPOOL Index/14.png" alt="" />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img src="/src/svg/WPPOOL Index/13.png" alt="" />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img src="/src/svg/WPPOOL Index/12.png" alt="" />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img src="/src/svg/WPPOOL Index/11.png" alt="" />
+        </div>
+        <div
+          class="flex justify-center items-center h-28 w-44 md:w-52 bg-white mr-4 mt-4 hover:scale-105 hover:bg-blue-200"
+        >
+          <img src="/src/svg/WPPOOL Index/10.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ninth section -->
+    <div
+      class="bg-[#E6E6E6] mt-28 md:pr-12 md:pl-20 p-6 w-screen md:h-screen h-full"
+    >
+      <div class="md:flex justify-center items-center text-gray-700">
+        <div
+          class="font-nantes flex items-center justify-start h-full md:text-4xl text-3xl p-4 md:pr-6"
+        >
+          <h1>
+            Experience remarkable WordPress products with a new level of power,
+            beauty, and human-centered designs.
+          </h1>
+        </div>
+        <div
+          class="decoration-transparent flex flex-col justify-center items-center text-blue-600 font-sans w-full p-4 md:pr-6"
+        >
+          <h3 class="text-2xl text-black">Jump to</h3>
+          <a href="#" class="hover:scale-105 hover:text-blue-900">About Us</a>
+          <a href="#" class="hover:scale-105 hover:text-blue-900">Portfolio</a>
+          <a href="#" class="hover:scale-105 hover:text-blue-900">News</a>
+          <a href="#" class="hover:scale-105 hover:text-blue-900">Stories</a>
+          <a href="#" class="hover:scale-105 hover:text-blue-900">Job</a>
+          <a href="#" class="hover:scale-105 hover:text-blue-900">About Us</a>
+        </div>
+
+        <div
+          class="flex flex-col justify-center h-full w-full items-center p-4 md:pr-6 text-[#191618] md:pt-36"
+        >
+          <div>
+            <h1 class="font-semibold pb-3">Cambridge</h1>
+            <p class="pb-6">
+              70728 Yost Burg, North Magdaleneview, UT 97952-2814
+            </p>
+            <div class="w-full h-[1px] bg-gray-500"></div>
+          </div>
+          <div>
+            <h1 class="font-semibold pb-3 pt-3">London</h1>
+            <p class="pb-6">
+              Suite 292 903 Stehr Streets, Langworthtown, SC 94577-9465
+            </p>
+            <div class="w-full h-[1px] bg-gray-500"></div>
+          </div>
+          <div>
+            <h1 class="font-semibold pb-3 pt-3">San Francisco</h1>
+            <p class="pb-6">
+              19837 Gilberto Lodge, Lake Kendallville, Colorado - 97392, Bhutan
+            </p>
+            <div class="w-full h-[1px] bg-gray-500"></div>
+          </div>
+          <div class="mt-4 flex justify-start items-start w-full">
+            <i
+              class="bx bxl-linkedin-square text-3xl text-gray-400 hover:scale-105"
+            ></i>
+            <i
+              class="bx bxl-twitter text-3xl text-gray-400 pl-3 hover:scale-105"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col justify-center items-start md:w-1/2 pb-4 p-4">
+        <div class="text-gray-400">
+          <p>©2024 <span> Terms of Use </span> <span> Privacy Policy </span></p>
+        </div>
+        <div class="text-gray-700">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+            mollitia,molestiae quas vel sint commodi repudiandae consequuntur
+            voluptatum laborum numquam blanditiis harum quisquam eius sed odit
+            fugiat iusto fuga praesentium optio, eaque rerum! Provident
+            similique accusantium nemo autem. Veritatis obcaecati tenetur iure
+            eius earum ut molestias architecto voluptate aliquam nihil, eveniet
+            aliquid culpa officia aut! Impedit sit sunt quaera
+          </p>
+        </div>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script src="script.js"></script>
+    <script src="script1.js"></script>
   </body>
 </html>

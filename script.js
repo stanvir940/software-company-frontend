@@ -6,6 +6,14 @@ document.getElementById("close-menu").addEventListener("click", function () {
   document.getElementById("slide-menu").classList.remove("show");
 });
 
+document.getElementById("menu-icon1").addEventListener("click", function () {
+  document.getElementById("slide-menu1").classList.toggle("show");
+});
+
+document.getElementById("close-menu1").addEventListener("click", function () {
+  document.getElementById("slide-menu1").classList.remove("show");
+});
+
 const chart = document.querySelector("#chart");
 
 // creating a new chart instance
@@ -58,3 +66,34 @@ new Chart(chart, {
     responsive: true,
   },
 });
+
+// code for carousel item
+
+const carousel = document.getElementById("carousel");
+const items = carousel.querySelectorAll(".carousel-item");
+let currentIndex = 0;
+
+document.getElementById("prev").addEventListener("click", () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+  } else {
+    currentIndex = items.length - 2; // Set to the second last item
+  }
+  updateCarousel();
+});
+
+document.getElementById("next").addEventListener("click", () => {
+  if (currentIndex < items.length - 2) {
+    currentIndex++;
+  } else {
+    currentIndex = 0;
+  }
+  updateCarousel();
+});
+
+function updateCarousel() {
+  const offset = -currentIndex * 50;
+  items.forEach((item) => {
+    item.style.transform = `translateX(${offset}%)`;
+  });
+}
